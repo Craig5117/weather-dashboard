@@ -1,3 +1,5 @@
+// var searchContainerEl = document.querySelector("#search-container");
+
 var conditionSet = function(dataSet) {
     switch (dataSet) {
         case "Thunderstorm":
@@ -87,6 +89,26 @@ var getFiveDay = function(lat, lon) {fetch("https://api.openweathermap.org/data/
         }
     })
 }
+var getPrevious = function(){
+    var historySearch = $(this).text().trim();
+    getWeatherData(historySearch);
+}
 
+var citySubmitHandler = function(event) {
+    console.log("You submitted something.")
+    event.preventDefault();
+    var city = $("#searchBar").val().trim();
+    
+    if (city) {
+        getWeatherData(city);
+        $("#searchBar").val("");
+    }
+    else {
+        alert("Please enter a city.");
+    }
+};
 
-getWeatherData("Johnson City")
+ 
+$("#search-container").on("submit", citySubmitHandler);
+$(".search-history").on("click", getPrevious)
+
