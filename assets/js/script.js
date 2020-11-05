@@ -4,7 +4,7 @@ var getWeatherData = function(city) {fetch("https://api.openweathermap.org/data/
             response.json().then(function(data) {
                 var lat = data.coord.lat;
                 var lon = data.coord.lon;
-                // console.log(data);
+                console.log(data);
                 // console.log("Location: " + data.name, 
                 // "Temperature: " + Math.round(data.main.temp) + " °F",
                 // "Humidity: " + data.main.humidity +"%",
@@ -12,7 +12,9 @@ var getWeatherData = function(city) {fetch("https://api.openweathermap.org/data/
                 // "Coordinates: " + data.coord.lat + ", " + data.coord.lon);
                 var location = data.name;
                 var currentDate = moment().format('MM/DD/YYYY');
-                $("#location").text(location + " (" + currentDate + ")");
+                console.log(data.weather[0].main);
+                // switch (data.weather.main){}
+                $("#location").html(location + " (" + currentDate + ")" + " <img src='./assets/images/sun.svg' />");
                 $("#temperature").text("Temperature: " + data.main.temp.toFixed(1) + " °F");
                 $("#humidity").text("Humidity: " + data.main.humidity +"%");
                 $("#windspeed").text("Wind Speed: " + data.wind.speed + " MPH");
