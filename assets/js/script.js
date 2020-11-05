@@ -14,7 +14,7 @@ var getWeatherData = function(city) {fetch("https://api.openweathermap.org/data/
                 var currentDate = moment().format('MM/DD/YYYY');
                 console.log(data.weather[0].main);
                 // switch (data.weather.main){}
-                $("#location").html(location + " (" + currentDate + ")" + " <img src='./assets/images/sun.svg' />");
+                $("#location").html(location + " (" + currentDate + ")" + " <img src='./assets/images/partSun.svg' /> <img src='./assets/images/part2.svg' />");
                 $("#temperature").text("Temperature: " + data.main.temp.toFixed(1) + " °F");
                 $("#humidity").text("Humidity: " + data.main.humidity +"%");
                 $("#windspeed").text("Wind Speed: " + data.wind.speed + " MPH");
