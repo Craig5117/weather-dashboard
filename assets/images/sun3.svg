@@ -8,19 +8,19 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="72"
-   height="72"
-   viewBox="0 0 24 24"
-   fill="none"
-   stroke="#ff8400"
-   stroke-width="2"
-   stroke-linecap="round"
-   stroke-linejoin="round"
-   class="feather feather-sun"
-   version="1.1"
-   id="svg20"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
    sodipodi:docname="sun3.svg"
-   inkscape:version="1.0 (4035a4fb49, 2020-05-01)">
+   id="svg20"
+   version="1.1"
+   class="feather feather-sun"
+   stroke-linejoin="round"
+   stroke-linecap="round"
+   stroke-width="2"
+   stroke="#ff8400"
+   fill="none"
+   viewBox="0 0 24 24"
+   height="72"
+   width="72">
   <metadata
      id="metadata26">
     <rdf:RDF>
@@ -29,127 +29,127 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <defs
      id="defs24">
     <linearGradient
-       inkscape:collect="always"
-       id="linearGradient461">
+       id="linearGradient461"
+       inkscape:collect="always">
       <stop
-         style="stop-color:#ffffff;stop-opacity:1;"
+         id="stop457"
          offset="0"
-         id="stop457" />
+         style="stop-color:#ffffff;stop-opacity:0.76" />
       <stop
-         style="stop-color:#ffffff;stop-opacity:0;"
+         id="stop459"
          offset="1"
-         id="stop459" />
+         style="stop-color:#ffffff;stop-opacity:0;" />
     </linearGradient>
     <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient461"
-       id="linearGradient463"
-       x1="5.3204818"
-       y1="16.886747"
-       x2="15.816868"
-       y2="9.0216866"
+       gradientTransform="matrix(0.93048128,0,0,0.91883116,0.74948789,0.90877808)"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.93048128,0,0,0.91883116,0.74948789,0.90877808)" />
+       y2="9.0216866"
+       x2="15.816868"
+       y1="10.834017"
+       x1="6.4191852"
+       id="linearGradient463"
+       xlink:href="#linearGradient461"
+       inkscape:collect="always" />
   </defs>
   <sodipodi:namedview
-     inkscape:document-rotation="0"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1"
-     objecttolerance="10"
-     gridtolerance="10"
-     guidetolerance="10"
-     inkscape:pageopacity="0"
-     inkscape:pageshadow="2"
-     inkscape:window-width="1920"
-     inkscape:window-height="1001"
-     id="namedview22"
-     showgrid="false"
-     inkscape:zoom="4.0756849"
-     inkscape:cx="83.231325"
-     inkscape:cy="36.736627"
-     inkscape:window-x="-9"
-     inkscape:window-y="-9"
+     inkscape:current-layer="svg20"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg20" />
+     inkscape:window-y="-9"
+     inkscape:window-x="-9"
+     inkscape:cy="36.736627"
+     inkscape:cx="83.231325"
+     inkscape:zoom="8.1513698"
+     showgrid="false"
+     id="namedview22"
+     inkscape:window-height="1001"
+     inkscape:window-width="1920"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     inkscape:document-rotation="0" />
   <circle
-     cx="12"
-     cy="12"
-     r="5"
+     style="fill:#ffff00"
      id="circle2"
-     style="fill:#ffff00" />
-  <path
-     id="line4"
-     style="stroke-width:6"
-     d="M 36,3 V 9 Z"
-     transform="scale(0.33333333)" />
-  <line
-     x1="12"
-     y1="21"
-     x2="12"
-     y2="23"
-     id="line6" />
-  <path
-     id="line8"
-     style="stroke-width:6"
-     transform="scale(0.33333333)"
-     d="m 12.660156,12.660156 4.259766,4.259766 z" />
-  <line
-     x1="18.36"
-     y1="18.36"
-     x2="19.78"
-     y2="19.78"
-     id="line10" />
-  <line
-     x1="1"
-     y1="12"
-     x2="3"
-     y2="12"
-     id="line12" />
-  <line
-     x1="21"
-     y1="12"
-     x2="23"
-     y2="12"
-     id="line14" />
-  <line
-     x1="4.22"
-     y1="19.78"
-     x2="5.64"
-     y2="18.36"
-     id="line16" />
-  <line
-     x1="18.36"
-     y1="5.64"
-     x2="19.78"
-     y2="4.22"
-     id="line18" />
-  <ellipse
-     style="fill:#ffff00;fill-rule:evenodd;stroke-width:0.666667"
-     id="path28"
-     cx="12.028915"
-     cy="11.971085"
-     rx="5.4072289"
-     ry="4.453012" />
-  <ellipse
-     ry="4.4530115"
-     rx="5.4072289"
+     r="5"
      cy="12"
-     cx="11.971085"
-     id="path28-1"
+     cx="12" />
+  <path
+     transform="scale(0.33333333)"
+     d="M 36,3 V 9 Z"
+     style="stroke-width:6"
+     id="line4" />
+  <line
+     id="line6"
+     y2="23"
+     x2="12"
+     y1="21"
+     x1="12" />
+  <path
+     d="m 12.660156,12.660156 4.259766,4.259766 z"
+     transform="scale(0.33333333)"
+     style="stroke-width:6"
+     id="line8" />
+  <line
+     id="line10"
+     y2="19.78"
+     x2="19.78"
+     y1="18.36"
+     x1="18.36" />
+  <line
+     id="line12"
+     y2="12"
+     x2="3"
+     y1="12"
+     x1="1" />
+  <line
+     id="line14"
+     y2="12"
+     x2="23"
+     y1="12"
+     x1="21" />
+  <line
+     id="line16"
+     y2="18.36"
+     x2="5.64"
+     y1="19.78"
+     x1="4.22" />
+  <line
+     id="line18"
+     y2="4.22"
+     x2="19.78"
+     y1="5.64"
+     x1="18.36" />
+  <ellipse
+     ry="4.453012"
+     rx="5.4072289"
+     cy="11.971085"
+     cx="12.028915"
+     id="path28"
      style="fill:#ffff00;fill-rule:evenodd;stroke-width:0.666667" />
   <ellipse
-     style="fill:url(#linearGradient463);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.616426"
-     id="path28-1-1"
-     cx="11.94217"
-     cy="12.014458"
+     style="fill:#ffff00;fill-rule:evenodd;stroke-width:0.666667"
+     id="path28-1"
+     cx="11.971085"
+     cy="12"
+     rx="5.4072289"
+     ry="4.4530115" />
+  <ellipse
+     ry="4.0915656"
      rx="5.0313253"
-     ry="4.0915656" />
+     cy="12.014458"
+     cx="11.94217"
+     id="path28-1-1"
+     style="fill:url(#linearGradient463);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.616426" />
 </svg>
