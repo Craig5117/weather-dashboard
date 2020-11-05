@@ -13,8 +13,35 @@ var getWeatherData = function(city) {fetch("https://api.openweathermap.org/data/
                 var location = data.name;
                 var currentDate = moment().format('MM/DD/YYYY');
                 console.log(data.weather[0].main);
-                // switch (data.weather.main){}
-                $("#location").html(location + " (" + currentDate + ")" + " <img src='./assets/images/partSun.svg' /> <img src='./assets/images/part2.svg' />");
+                var weather = "";
+                switch (data.weather[0].main) {
+                    case "Thunderstorm":
+                        weather = " <img src='./assets/images/lightning.svg' />";
+                        break;
+                    case "Drizzle": 
+                        weather = " <img src='./assets/images/drizzle.svg' />";
+                        break;
+                    case "Rain":
+                        weather = " <img src='./assets/images/rain.svg' />";
+                        break;
+                    case "Snow":
+                        weather = " <img src='./assets/images/snow.svg' />";
+                        break;
+                    case "Clear":
+                        weather = " <img src='./assets/images/sun3.svg' />";
+                        break;
+                    case "Clouds":
+                        weather = " <img src='./assets/images/cloud.svg' />";
+                        break;
+                    case "Tornado":
+                        weather = " <img src='./assets/images/tornado.svg' />";
+                        break;
+                    default:
+                        weather = " <img src='./assets/images/fog.svg' />";
+                        break;
+
+                }
+                $("#location").html(location + " (" + currentDate + ")" + weather);
                 $("#temperature").text("Temperature: " + data.main.temp.toFixed(1) + " °F");
                 $("#humidity").text("Humidity: " + data.main.humidity +"%");
                 $("#windspeed").text("Wind Speed: " + data.wind.speed + " MPH");
@@ -32,4 +59,4 @@ var getWeatherData = function(city) {fetch("https://api.openweathermap.org/data/
 }
 
 
-getWeatherData("Johnson City")
+getWeatherData("Vancouver")
