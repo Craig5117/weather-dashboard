@@ -19,8 +19,8 @@
             <div class="col-12 col-md-3 px-2">
                 <!--City Submission and Search History-->
                     <div class="row mt-2 d-md-flex flex-md-col">
-                            <input class="form-control col-9 mb-2" type="text"><button type="submit" class="btn btn-primary bg-primary text-light border-0 ml-1 mb-2" id="searchBtn"><i class="fa fa-search"></i></button>
-                            <p class="list-group-item btn btn-light border border-black-50 col-6 col-md-12 mb-1 overflow-hidden">Johnson City</p>
+                            <input class="form-control col-9 mb-2" type="text" id="searchBar"><button type="submit" class="btn btn-primary bg-primary text-light border-0 ml-1 mb-2" id="searchBtn"><i class="fa fa-search"></i></button>
+                            <button class="list-group-item btn btn-light border border-black-50 col-6 col-md-12 mb-1 overflow-hidden">Johnson City</button>
                             <p class="list-group-item btn btn-light border border-black-50 col-6 col-md-12 mb-1 overflow-hidden">Tauberbischofsheim</p>
                             <p class="list-group-item btn btn-light border border-black-50 col-6 col-md-12 mb-1 overflow-hidden">Tauberbischofsheim</p>
                             <p class="list-group-item btn btn-light border border-black-50 col-6 col-md-12 mb-1 overflow-hidden">Tauberbischofsheim</p>
@@ -33,11 +33,11 @@
             <div class="col-12 col-md-9">
                 <div class="col-12 d-md-flex flex-md-row py-2 border border-black-50 bg-white mb-3">
                     <div class="card border-0">
-                        <h2>Location (<span>MM/DD/YYYY</span>)</h2>
-                        <p id="temperature">Temperature: <span>10</span></p>
-                        <p id="humidity">Humidity: <span>10</span></p>
-                        <p id="windspeed">Windspeed: <span>10</span></p>
-                        <p id="uv">UV Index: <span>10</span></p>
+                        <h2 id="location"></h2>
+                        <p id="temperature"></p>
+                        <p id="humidity"></p>
+                        <p id="windspeed"></p>
+                        <p id="uv"></p>
                     </div>
                 </div>
                 <h2>5 Day Forecast:</h2>
@@ -78,6 +78,7 @@
         </div>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
 
