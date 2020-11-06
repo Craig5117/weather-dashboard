@@ -13,17 +13,3 @@ main {
 h3 {
     font-size: 1.5rem;
 }
-
-
-/* #searchBtn:hover {
-    border: 3px solid rgba(81, 203, 238, 1);
-    box-shadow: 0 0 10px rgba(81, 203, 238, 1);
-} */
-
-@media screen and (max-width: 768) {
-  
-}
-@media screen and (max-width: 600) {
-    
-    
-}

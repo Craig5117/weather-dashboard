@@ -15,20 +15,22 @@
         <h1 class="text-light">Weather Dashboard</h1><span class="text-light px-2"><input type="radio" name="unit-toggle" id="°F"/><label for="°F">°F</label></span><span class="text-light px-2"><input type="radio" name="unit-toggle" id="°C"/><label for="°C">°C</label></span>
     </header>
     <main class="py-3">
+        <!--All content wrapper-->
         <div class="col d-md-flex flex-md-row">
+            <!--div wrapper for form and search history-->
             <div class="col-12 col-md-3 px-2">
                 <!--City Submission and Search History-->
-                    
                     <form class="row mt-2 d-md-flex flex-md-col bg-light p-2" id="search-container">
-                            
                             <h2>Search for a City:</h2>
                             <input class="form-control col-9 mb-2" type="text" id="searchBar" placeholder="Enter a city name"><button type="submit" class="btn btn-primary bg-primary text-light border-0 ml-1 mb-2" id="searchBtn"><i class="fa fa-search"></i></button>
                     </form> 
             </div>
+            <!--div wrapper for current and 5day-->
             <div class="col-12 col-md-9">
+                <!--Container for current-->
                 <div class="col-12 d-md-flex flex-md-row py-2 border border-black-50 bg-white mb-3">
                     <div class="card border-0">
-                        <h2 id="location" class="overflow-hidden">Location (MM/DD/YYYY)</h2>
+                        <h2 id="location" class="overflow-hidden">Location (Date)</h2>
                         <p id="temperature">Temperature:</p>
                         <p id="humidity">Humidity:</p>
                         <p id="windspeed">Wind Speed:</p>
@@ -36,40 +38,48 @@
                     </div>
                 </div>
                 <h2>5 Day Forecast:</h2>
+                <!--Container for 5day-->
                 <div class="col-12 d-md-flex flex-lg-row justify-content-between pt-md-3 text-light">
+                    <!--Day 1 (+1 Day from Current)-->
                     <div class="5day card bg-primary py-3 pl-2 pr-4 mb-3">
-                        <h3 class="5day-date">MM/DD/YYYY</h3>
+                        <h3 class="5day-date">Date</h3>
                         <p class="5day-condition"></p>
                         <p class="5day-temp">Temp:</p>
                         <p class="5day-hum">Hum: </p>
                     </div>
+                     <!--Day 2 (+2 Days from Current)-->
                     <div class="5day card bg-primary py-3 pl-2 pr-4 mb-3">
-                        <h3 class="5day-date">MM/DD/YYYY</h3>
+                        <h3 class="5day-date">Date</h3>
                         <p class="5day-condition"></p>
                         <p class="5day-temp">Temp:</p>
                         <p class="5day-hum">Hum: </p>
                     </div>
+                     <!--Day 3 (+3 Days from Current)-->
                     <div class="5day card bg-primary py-3 pl-2 pr-4 mb-3">
-                        <h3 class="5day-date">MM/DD/YYYY</h3>
+                        <h3 class="5day-date">Date</h3>
                         <p class="5day-condition"></p>
                         <p class="5day-temp">Temp:</p>
                         <p class="5day-hum">Hum: </p>
                     </div>
+                     <!--Day 4 (+4 Days from Current)-->
                     <div class="5day card bg-primary py-3 pl-2 pr-4 mb-3">
-                        <h3 class="5day-date">MM/DD/YYYY</h3>
+                        <h3 class="5day-date">Date</h3>
                         <p class="5day-condition"></p>
                         <p class="5day-temp">Temp:</p>
                         <p class="5day-hum">Hum: </p>
                     </div>
+                     <!--Day 6 (+6 Days from Current)-->
                     <div class="5day card bg-primary py-3 pl-2 pr-4 mb-3">
-                        <h3 class="5day-date">MM/DD/YYYY</h3>
+                        <h3 class="5day-date">Date</h3>
                         <p class="5day-condition"></p>
                         <p class="5day-temp">Temp:</p>
                         <p class="5day-hum">Hum: </p>
                     </div>
-                                      
+                <!--End 5day container-->
                 </div>
+            <!--End current and 5day wrapper-->
             </div>
+        <!--End all content wrapper-->
         </div>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

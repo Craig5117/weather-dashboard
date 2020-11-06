@@ -1,13 +1,12 @@
-// var searchContainerEl = document.querySelector("#search-container");
+// set global variables
 var cityHistory = [];
 var appId = "af9ded99d1790eca45328d602b9e06d9";
-
 var units = "imperial";
 var tempUnitDisplay = "°F";
 var speedUnitDisplay = "MPH";
 var dateFormat = "MM/DD/YYYY";
 var fiveDateFormat = "MM/DD YYYY";
-
+// load search history/update history buttons
 var loadHistory = function() {
     cityHistory = localStorage.getItem("cityHistory");
     cityHistory = JSON.parse(cityHistory);
@@ -25,7 +24,7 @@ var loadHistory = function() {
     }    
 
 };
-
+// toggle weather condition icons
 var conditionSet = function(dataSet) {
     switch (dataSet) {
         case "Thunderstorm":
@@ -54,7 +53,8 @@ var conditionSet = function(dataSet) {
             break;
     }
 };
-    
+// get current weather data and call uv index and 5 day forecast
+// also sets location for search history
 var getWeatherData = function(city) {fetch("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=" + units + "&appid=" + appId).then(function(response) {
         
         if (response.ok) {
@@ -73,9 +73,6 @@ var getWeatherData = function(city) {fetch("https://api.openweathermap.org/data/
                 fetch("https://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon=" + lon + "&appid=" + appId).then(function(response) {
                     if (response.ok) {
                         response.json().then(function(data) {
-                            
-                            
-                             
                             $("#uv").html("UV Index: <span class='text-light py-1 px-2 rounded' id='uv-val'>" + data.value.toFixed(1) + "</span>");
                             $("#uv-val").removeClass("bg-warning", "bg-danger", "bg-success");
                             if (data.value > 2 && data.value < 5) {
@@ -87,7 +84,6 @@ var getWeatherData = function(city) {fetch("https://api.openweathermap.org/data/
                             else if (data.value > 5) {
                                 $("#uv-val").addClass("bg-danger");
                             }
-                            console.log($("#uv"));
                         });
                     }
                     else {
@@ -102,18 +98,16 @@ var getWeatherData = function(city) {fetch("https://api.openweathermap.org/data/
         }
     });
 };
-
+// gets the five day forecast by lat and lon provided by getWeatherData
 var getFiveDay = function(lat, lon) {fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=minutely,hourly&units=" + units + "&appid=" + appId).then(function(response) {
         if (response.ok) {
             response.json().then(function(data) {
-                // console.log(data);
                 var fiveDay = data.daily;
                 fiveDay.splice(6);
                 fiveDay.shift();
                 var i = 0;
                 var x = 1;
-                $(".5day").each(function(){                   
-                    // console.log(fiveDay[i])
+                $(".5day").each(function(){
                     $(this).children(".5day-temp").text("Temp: " + Math.round(fiveDay[i].temp.day) + tempUnitDisplay);
                     $(this).children(".5day-hum").text("Hum: " + fiveDay[i].humidity + "%");
                     conditionSet(fiveDay[i].weather[0].main);
@@ -130,15 +124,15 @@ var getFiveDay = function(lat, lon) {fetch("https://api.openweathermap.org/data/
         }
     });
 };
+// calls getWeatherData by search history term
 var getPrevious = function(){
     var historySearch = $(this).text().trim();
     getWeatherData(historySearch);
 };
-
+// handles city search submission
 var citySubmitHandler = function(event) {
     event.preventDefault();
     var city = $("#searchBar").val().trim();
-    
     if (city) {
         getWeatherData(city);
         $("#searchBar").val("");
@@ -147,7 +141,7 @@ var citySubmitHandler = function(event) {
         alert("Please enter a city.");
     }
 };
-
+// updates search history array and localStorage
 var updateHistory = function(location){
     if (cityHistory.includes(location)){
         return;
@@ -159,25 +153,18 @@ var updateHistory = function(location){
             cityHistory.shift();
         }
         localStorage.setItem("cityHistory", JSON.stringify(cityHistory));
+        // this clears the search history deck so it can be repopulated with the updated list in loadHistory
         $(".search-history").each(function(){
             $(this).remove();
         });
         loadHistory();
-            
     }
 };
 
-// var loadHistory = function() {
 
-    // if (cityHistory.length === 0) {
-    //     return cityHistory = []
-    // }
-    // else {
-        // updateHistory();
-    // }
-// }
-
+// call loadHistory on page load
 loadHistory();
+// toggle metric units and non-US date format
 $("#°C").on("click", function() {
     units = "metric";
     tempUnitDisplay = "°C";
@@ -185,6 +172,7 @@ $("#°C").on("click", function() {
     dateFormat = "DD/MM/YYYY";
     fiveDateFormat = "DD/MM YYYY";
 });
+// toggle imperial units and US date format (this is also default setting)
 $("#°F").on("click", function() {
     units = "imperial";
     tempUnitDisplay = "°F";
@@ -192,6 +180,7 @@ $("#°F").on("click", function() {
     dateFormat = "MM/DD/YYYY";
     fiveDateFormat = "MM/DD YYYY";
 });
+// search submission listener
 $("#search-container").on("submit", citySubmitHandler);
+// search history listener !!! previous listener interprets all <button> clicks in search container as "submit" so these must be <p>
 $("#search-container").on("click", ".search-history", getPrevious);
-
