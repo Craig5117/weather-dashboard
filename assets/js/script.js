@@ -28,22 +28,22 @@ var loadHistory = function() {
 var conditionSet = function(dataSet) {
     switch (dataSet) {
         case "Thunderstorm":
-            weather = " <img src='./assets/images/lightning.svg' />";
+            weather = " <img src='./assets/images/mylightning.svg' />";
             break;
         case "Drizzle": 
-            weather = " <img src='./assets/images/drizzle.svg' />";
+            weather = " <img src='./assets/images/mydrizzle.svg' />";
             break;
         case "Rain":
-            weather = " <img src='./assets/images/rain.svg' />";
+            weather = " <img src='./assets/images/myrain.svg' />";
             break;
         case "Snow":
-            weather = " <img src='./assets/images/snow.svg' />";
+            weather = " <img src='./assets/images/mysnow.svg' />";
             break;
         case "Clear":
-            weather = " <img src='./assets/images/sun3.svg' />";
+            weather = " <img src='./assets/images/mysun.svg' />";
             break;
         case "Clouds":
-            weather = " <img src='./assets/images/cloud.svg' />";
+            weather = " <img src='./assets/images/mycloud.svg' />";
             break;
         case "Tornado":
             weather = " <img src='./assets/images/tornado.svg' />";
