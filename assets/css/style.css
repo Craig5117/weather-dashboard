@@ -2,13 +2,18 @@ h1 {
     font-size: 3em;
 }
 
+h2 {
+    white-space: nowrap;
+}
+
 main {
     min-height: 100%;
 }
 
 h3 {
-    font-size: 1.5em;
+    font-size: 1.5rem;
 }
+
 
 /* #searchBtn:hover {
     border: 3px solid rgba(81, 203, 238, 1);
@@ -16,8 +21,7 @@ h3 {
 } */
 
 @media screen and (max-width: 768) {
-    
-    
+  
 }
 @media screen and (max-width: 600) {
     

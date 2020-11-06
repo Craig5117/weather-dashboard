@@ -93,11 +93,11 @@ var getFiveDay = function(lat, lon) {fetch("https://api.openweathermap.org/data/
                 var x = 1;
                 $(".5day").each(function(){                   
                     // console.log(fiveDay[i])
-                    $(this).children(".5day-temp").text("Temp: " + Math.round(fiveDay[i].temp.day) + " °F");
+                    $(this).children(".5day-temp").text("Temp: " + Math.round(fiveDay[i].temp.day) + "°F");
                     $(this).children(".5day-hum").text("Hum: " + fiveDay[i].humidity + "%");
                     conditionSet(fiveDay[i].weather[0].main);
                     $(this).children(".5day-condition").html(weather);
-                    var forecastDate = moment().add(x, 'days').format('MM/DD/YYYY');
+                    var forecastDate = moment().add(x, 'days').format('MM/DD YYYY');
                     $(this).children(".5day-date").text(forecastDate);
                     ++x;
                     ++i;
