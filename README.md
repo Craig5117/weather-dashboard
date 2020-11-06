@@ -4,14 +4,22 @@
 ## Purpose
 A simple weather app to get your current weather and five day forecast for the city of your choosing.
 ### Table of Contents
+- [Website](#website)
 - [Built With](#built-with)
 - [Resources](#resources)
-- [Website](#website)
 - [Contribution](#contribution)
     - [Author Contact Info](#author-contact-info)
 - [Features](#features)
 
 ---
+
+## Website
+ https://craig5117.github.io/weather-dashboard/
+
+[Back to Contents](#table-of-contents)
+
+---
+
 ## Built With
 - HTML
 - CSS
@@ -26,12 +34,6 @@ A simple weather app to get your current weather and five day forecast for the c
 ## Resources
 - [Font Awesome](https://fontawesome.com/) (https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css)
 - [OpenWeather](https://openweathermap.org/)
-
-[Back to Contents](#table-of-contents)
-
----
-## Website
- https://craig5117.github.io/weather-dashboard/
 
 [Back to Contents](#table-of-contents)
 
