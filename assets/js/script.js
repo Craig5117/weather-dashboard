@@ -10,7 +10,7 @@ var fiveDateFormat = "MM/DD YYYY";
 var loadHistory = function() {
     cityHistory = localStorage.getItem("cityHistory");
     cityHistory = JSON.parse(cityHistory);
-    if (cityHistory.length === 0) {
+    if (!cityHistory) {
         cityHistory = [];
         return;
     } 
