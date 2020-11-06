@@ -1,4 +1,23 @@
 // var searchContainerEl = document.querySelector("#search-container");
+var cityHistory = [];
+
+var loadHistory = function() {
+    cityHistory = localStorage.getItem("cityHistory");
+    cityHistory = JSON.parse(cityHistory);
+    if (cityHistory.length === 0) {
+        cityHistory = [];
+        return;
+    } 
+    else { 
+        for (var i = 0; i < cityHistory.length; ++i) {
+            var historyEl = document.createElement("p")
+            historyEl.textContent = cityHistory[i];
+            historyEl.classList = "search-history list-group-item btn btn-light border border-black-50 col-6 col-md-12 mb-1 overflow-hidden";
+            $("#search-container").append(historyEl)
+        }
+    }    
+
+}
 
 var conditionSet = function(dataSet) {
     switch (dataSet) {
@@ -24,7 +43,7 @@ var conditionSet = function(dataSet) {
             weather = " <img src='./assets/images/tornado.svg' />";
             break;
         default:
-            weather = " <img src='./assets/images/fog.svg' />";
+            weather = " <img src='./assets/images/fog2.svg' />";
             break;
     }
 }
@@ -43,6 +62,7 @@ var getWeatherData = function(city) {fetch("https://api.openweathermap.org/data/
                 $("#humidity").text("Humidity: " + data.main.humidity +"%");
                 $("#windspeed").text("Wind Speed: " + data.wind.speed + " MPH");
                 getFiveDay(lat, lon);
+                updateHistory(location);
                 fetch("https://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon=" + lon + "&appid=af9ded99d1790eca45328d602b9e06d9").then(function(response) {
                     if (response.ok) {
                         response.json().then(function(data) {
@@ -65,14 +85,14 @@ var getWeatherData = function(city) {fetch("https://api.openweathermap.org/data/
 var getFiveDay = function(lat, lon) {fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=minutely,hourly&units=imperial&appid=af9ded99d1790eca45328d602b9e06d9").then(function(response) {
         if (response.ok) {
             response.json().then(function(data) {
-                console.log(data);
+                // console.log(data);
                 var fiveDay = data.daily;
                 fiveDay.splice(6);
                 fiveDay.shift();
                 var i = 0;
                 var x = 1;
                 $(".5day").each(function(){                   
-                    console.log(fiveDay[i])
+                    // console.log(fiveDay[i])
                     $(this).children(".5day-temp").text("Temp: " + Math.round(fiveDay[i].temp.day) + " °F");
                     $(this).children(".5day-hum").text("Hum: " + fiveDay[i].humidity + "%");
                     conditionSet(fiveDay[i].weather[0].main);
@@ -95,7 +115,6 @@ var getPrevious = function(){
 }
 
 var citySubmitHandler = function(event) {
-    console.log("You submitted something.")
     event.preventDefault();
     var city = $("#searchBar").val().trim();
     
@@ -108,7 +127,36 @@ var citySubmitHandler = function(event) {
     }
 };
 
- 
+var updateHistory = function(location){
+    if (cityHistory.includes(location)){
+        return
+    }
+    else {
+        cityHistory.push(location);
+        
+        if (cityHistory.length > 8) {
+            cityHistory.shift();
+        }
+        localStorage.setItem("cityHistory", JSON.stringify(cityHistory));
+        $(".search-history").each(function(){
+            $(this).remove();
+        })
+        loadHistory();
+            
+    }
+}
+
+// var loadHistory = function() {
+
+    // if (cityHistory.length === 0) {
+    //     return cityHistory = []
+    // }
+    // else {
+        // updateHistory();
+    // }
+// }
+
+loadHistory();
 $("#search-container").on("submit", citySubmitHandler);
-$(".search-history").on("click", getPrevious)
+$("#search-container").on("click", ".search-history", getPrevious);
 
