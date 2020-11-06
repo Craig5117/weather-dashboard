@@ -1,6 +1,6 @@
 # weather-dashboard
-![Screenshot of Weather Dashboard](./screenshots/screenshot-1.jpg)
-![Screenshot of Work Day Scheduler Color Status Example](./screenshots/screenshot-2.jpg)
+![Screenshot of Weather Dashboard](./screenshots/screenshot-1.png)
+![Screenshot of Weather Dashboard Metric Example](./screenshots/screenshot-2.png)
 ## Purpose
 A simple weather app to get your current weather and five day forecast for the city of your choosing.
 ### Table of Contents

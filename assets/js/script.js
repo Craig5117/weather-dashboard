@@ -107,13 +107,13 @@ var getFiveDay = function(lat, lon) {fetch("https://api.openweathermap.org/data/
                 fiveDay.shift();
                 var i = 0;
                 var x = 1;
-                $(".5day").each(function(){
-                    $(this).children(".5day-temp").text("Temp: " + Math.round(fiveDay[i].temp.day) + tempUnitDisplay);
-                    $(this).children(".5day-hum").text("Hum: " + fiveDay[i].humidity + "%");
+                $(".fiveDay").each(function(){
+                    $(this).children(".fiveDay-temp").text("Temp: " + Math.round(fiveDay[i].temp.day) + tempUnitDisplay);
+                    $(this).children(".fiveDay-hum").text("Hum: " + fiveDay[i].humidity + "%");
                     conditionSet(fiveDay[i].weather[0].main);
-                    $(this).children(".5day-condition").html(weather);
+                    $(this).children(".fiveDay-condition").html(weather);
                     var forecastDate = moment().add(x, 'days').format(fiveDateFormat);
-                    $(this).children(".5day-date").text(forecastDate);
+                    $(this).children(".fiveDay-date").text(forecastDate);
                     ++x;
                     ++i;
                 });
