@@ -44,7 +44,6 @@ A simple weather app to get your current weather and five day forecast for the c
 - Displays current weather and a five day forecast.
 - Up to eight of the most recent search entries are saved, and stored below the search bar for user convenience.
 - UV Index is color coded by intensity level. Green indicates favorable, yellow indicates moderate, and red indicates severe.
-- Built mobile first for responsive mobile display.
 - General weather condition is indicated by a colorful icon.
 
 ---
